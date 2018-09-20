@@ -33,17 +33,7 @@ export default function EnhanceLoadable(opt) {
 
     componentDidMount() {
       const { component } = this.state
-      try {
-        this.fetchComponent()
-      } catch (e) {
-        this.setState({
-          error: null,
-        })
-        if (errorCallback && typeof errorCallback === 'function') {
-          errorCallback()
-        }
-        this.fetchComponent()
-      }
+      this.fetchComponent()
 
       if (timeout) {
         setTimeout(() => {
@@ -64,19 +54,28 @@ export default function EnhanceLoadable(opt) {
     }
 
     fetchComponent = async () => {
-      const { default: component } = await loader();
-      // 为高阶组件设置displayName
-      const WrappedComponentName = component.displayName
-            || component.name
-            || 'Component'
+      try {
+        const { default: component } = await loader();
+        // 为高阶组件设置displayName
+        const WrappedComponentName = component.displayName
+              || component.name
+              || 'Component'
 
-      EnhanceComponent.displayName = `hocLoadable(${WrappedComponentName})`
+        EnhanceComponent.displayName = `hocLoadable(${WrappedComponentName})`
 
-      hoistNonReactStatic(EnhanceComponent, component)
+        hoistNonReactStatic(EnhanceComponent, component)
 
-      this.setState({
-        component,
-      });
+        this.setState({
+          component,
+        });
+      } catch (e) {
+        this.setState({
+          error: e,
+        })
+        if (errorCallback && typeof errorCallback === 'function') {
+          errorCallback()
+        }
+      }
     }
 
     render() {
