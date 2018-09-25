@@ -48,7 +48,7 @@ export default function EnhanceLoadable(opt) {
       const { component } = this.state
       if (!preState.component && component) {
         if (doneCallback && typeof doneCallback === 'function') {
-          doneCallback()
+          doneCallback(component)
         }
       }
     }
