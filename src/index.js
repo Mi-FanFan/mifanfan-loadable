@@ -96,8 +96,7 @@ export default function EnhanceLoadable(opt) {
           this.setState({
             component,
           });
-        })
-        .catch((e) => {
+        }, (e) => {
           this.setState({
             error: e,
           })
