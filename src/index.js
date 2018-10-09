@@ -53,29 +53,58 @@ export default function EnhanceLoadable(opt) {
       }
     }
 
-    fetchComponent = async () => {
-      try {
-        const { default: component } = await loader();
-        // 为高阶组件设置displayName
-        const WrappedComponentName = component.displayName
-              || component.name
-              || 'Component'
+    // fetchComponent =  () => {
+    //   try {
+    //     const { default: component } =  loader();
+    //     // 为高阶组件设置displayName
+    //     const WrappedComponentName = component.displayName
+    //           || component.name
+    //           || 'Component'
+    //
+    //     EnhanceComponent.displayName = `hocLoadable(${WrappedComponentName})`
+    //
+    //     hoistNonReactStatic(EnhanceComponent, component)
+    //
+    //     this.setState({
+    //       component,
+    //     });
+    //   } catch (e) {
+    //     this.setState({
+    //       error: e,
+    //     })
+    //     if (errorCallback && typeof errorCallback === 'function') {
+    //       errorCallback()
+    //     }
+    //   }
+    // }
 
-        EnhanceComponent.displayName = `hocLoadable(${WrappedComponentName})`
+    fetchComponent = () => {
+      const promise = loader()
 
-        hoistNonReactStatic(EnhanceComponent, component)
+      promise
+        .then((res) => {
+          const { default: component } =  res
+          // 为高阶组件设置displayName
+          const WrappedComponentName = component.displayName
+            || component.name
+            || 'Component'
 
-        this.setState({
-          component,
-        });
-      } catch (e) {
-        this.setState({
-          error: e,
+          EnhanceComponent.displayName = `hocLoadable(${WrappedComponentName})`
+
+          hoistNonReactStatic(EnhanceComponent, component)
+
+          this.setState({
+            component,
+          });
         })
-        if (errorCallback && typeof errorCallback === 'function') {
-          errorCallback()
-        }
-      }
+        .catch((e) => {
+          this.setState({
+            error: e,
+          })
+          if (errorCallback && typeof errorCallback === 'function') {
+            errorCallback()
+          }
+        })
     }
 
     render() {
