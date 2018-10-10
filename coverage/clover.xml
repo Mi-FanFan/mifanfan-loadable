@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1539156690906" clover="3.2.0">
+  <project timestamp="1539156690906" name="All files">
+    <metrics statements="26" coveredstatements="21" conditionals="21" coveredconditionals="13" methods="9" coveredmethods="8" elements="56" coveredelements="42" complexity="0" loc="26" ncloc="26" packages="1" files="1" classes="1">
+      <file name="index.js" path="/Users/lizhuang/gitcode/mifanfan-loadable/src/index.js">
+        <metrics statements="26" coveredstatements="21" conditionals="21" coveredconditionals="13" methods="9" coveredmethods="8"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="38" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="48" count="2" type="stmt"/>
+        <line num="49" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="50" count="1" type="cond" truecount="2" falsecount="2"/>
+        <line num="51" count="0" type="stmt"/>
+        <line num="82" count="2" type="stmt"/>
+        <line num="84" count="2" type="stmt"/>
+        <line num="86" count="1" type="stmt"/>
+        <line num="88" count="1" type="cond" truecount="2" falsecount="1"/>
+        <line num="92" count="1" type="stmt"/>
+        <line num="94" count="1" type="stmt"/>
+        <line num="96" count="1" type="stmt"/>
+        <line num="100" count="1" type="stmt"/>
+        <line num="103" count="1" type="cond" truecount="2" falsecount="2"/>
+        <line num="104" count="0" type="stmt"/>
+        <line num="110" count="4" type="stmt"/>
+        <line num="112" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="124" count="2" type="stmt"/>
+      </file>
+    </metrics>
+  </project>
+</coverage>

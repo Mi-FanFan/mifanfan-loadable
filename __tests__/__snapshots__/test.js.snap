@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loading error 1`] = `
+<div>
+  MyLoadingComponent 
+  {"error":null,"timeOut":false}
+</div>
+`;
+
+exports[`loading error 2`] = `
+<div>
+  MyLoadingComponent 
+  {"error":null,"timeOut":false}
+</div>
+`;
+
+exports[`loading error 3`] = `
+<div>
+  MyLoadingComponent 
+  {"error":3,"timeOut":false}
+</div>
+`;
+
+exports[`loading success 1`] = `
+<div>
+  MyLoadingComponent 
+  {"error":null,"timeOut":false}
+</div>
+`;
+
+exports[`loading success 2`] = `
+<div>
+  MyLoadingComponent 
+  {"error":null,"timeOut":false}
+</div>
+`;
+
+exports[`loading success 3`] = `
+<div>
+  MyComponent 
+  {"prop":"foo"}
+</div>
+`;
